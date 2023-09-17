@@ -34,22 +34,46 @@ html {
   height: 100%;
   width: 100%;
   background-color: #111;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(50, 50, 50, 1) 100%
+  );
 }
 
 #now {
   height: 100%;
   width: 100%;
   background-color: #222;
+
+  background: linear-gradient(
+    90deg,
+    rgba(50, 50, 50, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
 #future {
   height: 100%;
   width: 100%;
   background-color: #111;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(50, 50, 50, 1) 100%
+  );
 }
 
 #farfuture {
   height: 100%;
   width: 100%;
   background-color: #222;
+
+  background: linear-gradient(
+    90deg,
+    rgba(50, 50, 50, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }

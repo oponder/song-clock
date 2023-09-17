@@ -2,9 +2,11 @@ scrollArea = document.getElementById("scrollArea");
 
 // Set up an animation loop
 
+const startTime = new Date().getTime();
+
 function animate() {
   // Get time in utc milliseconds
-  var time = new Date().getTime();
+  let time = new Date().getTime();
 
   // Call the scroll function to move the scroll area
   scroll(time);
@@ -13,11 +15,23 @@ function animate() {
   requestAnimationFrame(animate);
 }
 
+let w = window.innerWidth;
+
+let durationSeconds = 300;
+let durationMilliseconds = durationSeconds * 1000;
+
+addEventListener("resize", (event) => {
+  w = window.innerWidth;
+});
+
 function scroll(time) {
-  console.log(time);
-  scrollArea.style.right = ((time / 50) % 3600) + "px";
+  let offset = time;
+
+  let offsetPercentage =
+    ((offset % durationMilliseconds) * 2) / durationMilliseconds;
+
+  scrollArea.style.right = offsetPercentage * w + "px";
 }
 
 // Call the animate function to start the animation loop
-
 animate();

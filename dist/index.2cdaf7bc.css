@@ -30,25 +30,25 @@ body, html {
 }
 
 #prev {
-  background-color: #111;
+  background: linear-gradient(90deg, #000 0%, #323232 100%);
   width: 100%;
   height: 100%;
 }
 
 #now {
-  background-color: #222;
+  background: linear-gradient(90deg, #323232 0%, #000 100%);
   width: 100%;
   height: 100%;
 }
 
 #future {
-  background-color: #111;
+  background: linear-gradient(90deg, #000 0%, #323232 100%);
   width: 100%;
   height: 100%;
 }
 
 #farfuture {
-  background-color: #222;
+  background: linear-gradient(90deg, #323232 0%, #000 100%);
   width: 100%;
   height: 100%;
 }
