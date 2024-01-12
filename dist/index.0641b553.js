@@ -574,8 +574,8 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"bNKaB":[function(require,module,exports) {
-scrollArea = document.getElementById("scrollArea");
-circleArea = document.getElementById("circleArea");
+const scrollArea = document.getElementById("scrollArea");
+const circleArea = document.getElementById("circleArea");
 // Circle of fifths
 const circle = [
     [
