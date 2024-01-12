@@ -44,6 +44,12 @@ let w = window.innerWidth;
 
 let durationSeconds = 360;
 let durationMilliseconds = durationSeconds * 1000;
+let secondsInDay = 86400;
+
+function getSecondsToday() {
+  let d = new Date();
+  return d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds();
+}
 
 addEventListener("resize", (event) => {
   w = window.innerWidth;
@@ -57,8 +63,7 @@ function scroll(time) {
 
   scrollArea.style.right = offsetPercentage * w + "px";
 
-  const currentKeyIndex =
-    (offset / durationSeconds / (86400 / durationSeconds)) % 12;
+  const currentKeyIndex = (getSecondsToday() / durationSeconds) % 12;
 
   // Remove active class from all keys
   document.querySelectorAll(".key").forEach((key) => {
@@ -66,7 +71,7 @@ function scroll(time) {
   });
 
   document
-    .getElementById("key-" + Math.floor(currentKeyIndex))
+    .getElementById("key-" + Math.floor(currentKeyIndex - 0.5))
     .classList.add("active");
 }
 
