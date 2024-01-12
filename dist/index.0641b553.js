@@ -628,9 +628,10 @@ const circle = [
     ]
 ];
 // Create a div for each key
-circle.forEach((key)=>{
+circle.forEach((key, index)=>{
     let div = document.createElement("div");
     div.classList.add("key");
+    div.id = "key-" + index;
     div.innerHTML = key[0] + " / " + key[1];
     circleArea.appendChild(div);
 });
@@ -645,7 +646,7 @@ function animate() {
     requestAnimationFrame(animate);
 }
 let w = window.innerWidth;
-let durationSeconds = 300;
+let durationSeconds = 360;
 let durationMilliseconds = durationSeconds * 1000;
 addEventListener("resize", (event)=>{
     w = window.innerWidth;
@@ -654,6 +655,12 @@ function scroll(time) {
     let offset = time;
     let offsetPercentage = offset % durationMilliseconds * 2 / durationMilliseconds;
     scrollArea.style.right = offsetPercentage * w + "px";
+    const currentKeyIndex = offset / durationSeconds / (86400 / durationSeconds) % 12;
+    // Remove active class from all keys
+    document.querySelectorAll(".key").forEach((key)=>{
+        key.classList.remove("active");
+    });
+    document.getElementById("key-" + Math.floor(currentKeyIndex)).classList.add("active");
 }
 // Call the animate function to start the animation loop
 animate();
